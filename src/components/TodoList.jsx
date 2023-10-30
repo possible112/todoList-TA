@@ -83,9 +83,26 @@ function TodoList() {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
       <div className="flex justify-center mb-4 rounded-md shadow-sm" role="group">
-        <button className="px-4 py-2 m-5 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 rounded-lg hover:bg-green-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white" onClick={() => setFilter("all")}>All</button>
-        <button className="px-4 py-2 m-5 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 rounded-lg hover:bg-green-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white" onClick={() => setFilter("active")}>Active</button>
-        <button className="px-4 py-2 m-5 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 rounded-lg hover:bg-green-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white" onClick={() => setFilter("completed")}>Completed</button>
+      <button
+            className={`px-4 py-2 m-5 text-sm font-medium text-gray-900 bg-transparent border border-green-400 rounded-lg hover:bg-green-400 hover:text-white focus:z-10 focus:bg-green-500 focus:text-white ${
+              filter === "all" ? "hover:bg-green-500 hover:text-white" : ""
+            }`}
+            onClick={() => setFilter("all")}
+          >
+            All
+          </button>
+          <button
+            className="px-4 py-2 m-5 text-sm font-medium text-gray-900 bg-transparent border border-green-400 rounded-lg hover:bg-green-400 hover:text-white focus:z-10  focus:bg-green-500 focus:text-white"
+            onClick={() => setFilter("active")}
+          >
+            Active
+          </button>
+          <button
+            className="px-4 py-2 m-5 text-sm font-medium text-gray-900 bg-transparent border border-green-400 rounded-lg hover:bg-green-400 hover:text-white focus:z-10  focus:bg-green-500 focus:text-white"
+            onClick={() => setFilter("completed")}
+          >
+            Completed
+          </button>
       </div>
       {filteredTodos.map((todo) => (
         <div

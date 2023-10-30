@@ -110,6 +110,7 @@ function TodoList() {
           className="flex items-center justify-between bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
         >
           <input
+            className="ml-4"
             type="checkbox"
             checked={todo.completed}
             onChange={() => handleToggleComplete(todo.id)}
